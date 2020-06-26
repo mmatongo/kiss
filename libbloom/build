@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+export pkgver=1.6
+
+make MM=" "
+
+install -Dm 644 bloom.h /usr/include/bloom.h
+install -Dm 755 build/libbloom.so.$pkgver /usr/lib/libbloom.so.$pkgver
+ln -sv libbloom.so.$pkgver /usr/lib/libbloom.so
+ln -sv libbloom.so.$pkgver /usr/lib/libbloom.so.${pkgver%.*}
+
+unset pkgver
