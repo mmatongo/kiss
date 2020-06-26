@@ -1,0 +1,8 @@
+pcre make
+mbedtls make
+libsodium make 
+c-ares make
+libev make
+pkg-config
+xmlto
+asciidoc
