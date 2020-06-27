@@ -6,7 +6,7 @@
 		--sysconfdir=/etc \
 		--enable-shared \
 		--enable-system-shared-lib \
-        --disable-documentation
+        --disable-documentation \
             
 
 make

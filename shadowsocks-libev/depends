@@ -3,6 +3,9 @@ mbedtls make
 libsodium make 
 c-ares make
 libev make
-pkgconf
-# xmlto
-# asciidoc
+pkgconf make
+autoconf make
+automake make
+libbloom
+libcork
+libcorkipset

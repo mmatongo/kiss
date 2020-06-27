@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+autoreconf -vfi
+
+./configure \
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--mandir=/usr/share/man \
+		--localstatedir=/var \
+		--enable-build-docs
+make
+make DESTDIR="$1" install

@@ -1,1 +1,16 @@
 #!/bin/sh -e
+
+./configure \
+    --prefix=/usr \
+    --disable-drm \
+    --enable-randr \
+    --disable-geoclue \
+    --disable-geoclue2 \
+    --disable-ubuntu \
+    --disable-vidmod \
+    --disable-gui \
+    --disable-nls
+
+make
+
+make DESTDIR="$1" install

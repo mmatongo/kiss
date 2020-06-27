@@ -1,1 +1,11 @@
 #!/bin/sh -e
+
+sed -e 's%#include <ipset%#include <libcorkipset%' \
+      -e 's%#include "ipset%#include "libcorkipset%' \
+      -i include/ipset/*.h */*/*/*.c */*/*/*.c.in */*/*.c */*.c
+mv include/{,libcork}ipset
+
+cmake ./libcorkipset -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib
+make
+
+make DESTDIR="$1" install

@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+cmake    \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DENABLE_MAN=OFF \
+        -DENABLE_DOC=OFF \
+        -DENABLE_JAVASCRIPT=OFF \
+        -DENABLE_PHP=OFF 
+
+make
+make DESTDIR="$1" install
+
