@@ -3,7 +3,7 @@
 sed -i test/Makefile.in -e '/ical-009.sh \\/d'
 
 ./configure \
-    --enable-docs \
+    --disable-docs \
     --without-asciidoc \
     --prefix=/usr \
     --mandir=/usr/share/man \

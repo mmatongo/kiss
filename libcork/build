@@ -1,15 +1,15 @@
 #!/bin/sh -e
 
-#sed --in-place=.BACKUP 's/\(BUILD_TESTING[A-Z_]*\) ON/\1 OFF/' CMakeLists.txt
-
 echo "0.15.0" > RELEASE-VERSION
-#patch -p1 < fix-dumb-script.patch
+export DESTDIR="$1"
 
-cmake \
-		-DCMAKE_BUILD_TYPE=None \
-		-DCMAKE_INSTALL_PREFIX=/usr \
-		-DENABLE_STATIC=OFF \
-		-DCMAKE_INSTALL_LIBDIR=/usr/lib
+cmake -B build \
+    -DCMAKE_INSTALL_PREFIX=/usr
 
-make
-make DESTDIR="$1" install
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+    -D CMAKE_INSTALL_PREFIX=/usr/ \
+    -DENABLE_STATIC=OFF \
+	-DCMAKE_INSTALL_LIBDIR=/usr/lib
+
+cmake --build   build
+cmake --install build
