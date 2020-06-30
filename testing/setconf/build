@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+install -Dm755 "setconf.py" "$1/usr/bin/setconf"
+install -Dm644 "setconf.1.gz" "$1/usr/share/man/man1/setconf.1.gz"
