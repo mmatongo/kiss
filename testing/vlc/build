@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+sed -i '/vlc_demux.h/a #define LUA_COMPAT_APIINTCASTS' modules/lua/vlc.h 
+sed -i '/LIBSSH2_VERSION_NUM/s/10801/10900/' modules/access/sftp.c
+
+BUILDCC=gcc ./configure --prefix=/usr    \
+                        --disable-opencv \
+                        --disable-vpx \
+                        --disable-nls
+
+make
+make DESTDIR="$1" install
