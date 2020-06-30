@@ -1,5 +1,8 @@
 #!/bin/sh -e
 
+git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+sed -i 's|AC_CONFIG_FILES(\[libbloom/Makefile libcork/Makefile libipset/Makefile\])||' configure.ac
+
 ./autogen.sh
 ./configure \
 		--prefix=/usr \
