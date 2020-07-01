@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+cmake  -B build \
+		-DCMAKE_BUILD_TYPE=None \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-DCMAKE_INSTALL_LIBDIR=lib \
+		-DBUILD_SHARED_LIBS=True \
+		-DCMAKE_C_FLAGS="$CFLAGS" 
+
+make -C build
+make -C build DESTDIR="$1" install
+
+python3 setup.py install --prefix=/usr --root="$1"
