@@ -1,0 +1,407 @@
+-- The C compiler identification is GNU 10.1.0
+-- The CXX compiler identification is GNU 10.1.0
+-- Check for working C compiler: /usr/bin/cc
+-- Check for working C compiler: /usr/bin/cc - works
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Check for working CXX compiler: /usr/bin/c++
+-- Check for working CXX compiler: /usr/bin/c++ - works
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Checking if -Werror=implicit-function-declaration is supported by the C compiler...
+--   Flag is supported: -Werror=implicit-function-declaration
+-- Checking if -Werror=int-conversion is supported by the C compiler...
+--   Flag is supported: -Werror=int-conversion
+-- Found PkgConfig: /usr/bin/pkg-config (found version "1.7.3") 
+-- Found Freetype: /usr/lib/libfreetype.so (found suitable version "2.10.2", minimum required is "2.3.7") 
+-- Found Gettext: /usr/bin/msgmerge (found version "0.20.1") 
+-- Found Intl: /usr/include  
+-- Found GLIB: /usr/include/glib-2.0;/usr/lib/glib-2.0/include (found suitable version "2.64.3", minimum required is "2.6") 
+-- Performing Test Iconv_IS_BUILT_IN
+-- Performing Test Iconv_IS_BUILT_IN - Success
+-- Found Iconv: /usr/lib/libc.so  
+-- Found LibXml2: /usr/lib/libxml2.so (found version "2.9.10") 
+-- Found MathLib: built-in  
+-- Found ZLIB: /usr/lib/libz.so (found version "1.2.11") 
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found GDK3: gdk-3;pangocairo-1.0;pango-1.0;harfbuzz;gdk_pixbuf-2.0;cairo-gobject;cairo;gobject-2.0;glib-2.0 (found suitable version "3.24.21", minimum required is "3.10") 
+-- Found Python3: /usr/bin/python3.8 (found suitable version "3.8.3", minimum required is "3.3") found components: Development Interpreter 
+-- Could NOT find Sphinx (missing: Sphinx_BUILD_BINARY) 
+-- Looking for LibSpiroVersion
+-- Looking for LibSpiroVersion - found
+-- Found Libspiro: /usr/lib/libspiro.so (found version "20200505") 
+-- Looking for uniNamesList_names2anU
+-- Looking for uniNamesList_names2anU - found
+-- Found Libuninameslist: /usr/lib/libuninameslist.so (found version "20200413") 
+-- Found GIF: /usr/lib/libgif.so (found version "5.2.1") 
+-- Found JPEG: /usr/lib/libjpeg.so (found version "80") 
+-- Found PNG: /usr/lib/libpng.so (found version "1.6.37") 
+-- Found Readline: /usr/lib/libreadline.so (found version "8.0") 
+-- Found TIFF: /usr/lib/libtiff.so (found version "4.1.0") 
+-- Found WOFF2: woff2enc;brotlienc;woff2dec;brotlidec (found version "1.0.2") 
+-- Check if the system is big endian
+-- Searching 16 bit integer
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of unsigned short
+-- Check size of unsigned short - done
+-- Searching 16 bit integer - Using unsigned short
+-- Check if the system is big endian - little endian
+-- Looking for execinfo.h
+-- Looking for execinfo.h - not found
+-- Looking for ieeefp.h
+-- Looking for ieeefp.h - not found
+-- Looking for langinfo.h
+-- Looking for langinfo.h - found
+-- Looking for nl_langinfo
+-- Looking for nl_langinfo - found
+-- Found Git: /usr/bin/git (found version "2.27.0") 
+-- Build options: 
+--   CMAKE_BUILD_TYPE = Release
+--   BUILD_SHARED_LIBS = ON
+--   ENABLE_GUI = ON
+--   ENABLE_X11 = OFF
+--   ENABLE_NATIVE_SCRIPTING = ON
+--   ENABLE_PYTHON_SCRIPTING = ON
+--   ENABLE_PYTHON_EXTENSION = AUTO => ON
+--   ENABLE_LIBSPIRO = ON
+--   ENABLE_LIBUNINAMESLIST = ON
+--   ENABLE_LIBGIF = AUTO => ON
+--   ENABLE_LIBJPEG = AUTO => ON
+--   ENABLE_LIBPNG = AUTO => ON
+--   ENABLE_LIBREADLINE = AUTO => ON
+--   ENABLE_LIBTIFF = AUTO => ON
+--   ENABLE_WOFF2 = AUTO => ON
+--   ENABLE_DOCS = AUTO => OFF
+--   ENABLE_CODE_COVERAGE = OFF
+--   ENABLE_DEBUG_RAW_POINTS = OFF
+--   ENABLE_FONTFORGE_EXTRAS = TRUE
+--   ENABLE_MAINTAINER_TOOLS = TRUE
+--   ENABLE_TILE_PATH = OFF
+--   ENABLE_WRITE_PFM = OFF
+--   ENABLE_SANITIZER = none
+--   ENABLE_FREETYPE_DEBUGGER = 
+--   SPHINX_USE_VENV = OFF
+--   REAL_TYPE = double
+--   THEME = tango
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/dm/.cache/kiss/build-25530/fontforge/build
+Scanning dependencies of target makebuildtables
+[  0%] Building C object Unicode/CMakeFiles/makebuildtables.dir/makebuildtables.c.o
+[  0%] Linking C executable ../bin/makebuildtables
+[  0%] Built target makebuildtables
+Scanning dependencies of target makeutype
+[  1%] Building C object Unicode/CMakeFiles/makeutype.dir/makeutype.c.o
+/home/dm/.cache/kiss/build-25530/fontforge/Unicode/makeutype.c: In function 'build_lvf_alt_tables.constprop':
+/home/dm/.cache/kiss/build-25530/fontforge/Unicode/makeutype.c:1068:2: warning: 'cs' may be used uninitialized in this function [-Wmaybe-uninitialized]
+ 1068 |  fprintf( data, "/* MISC_verbose: here done index=%d_%d, have tis=%d %d, til=%d %d */\n", s,m,tis,cs,til,cl );
+      |  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/dm/.cache/kiss/build-25530/fontforge/Unicode/makeutype.c:1068:2: warning: 'cl' may be used uninitialized in this function [-Wmaybe-uninitialized]
+/home/dm/.cache/kiss/build-25530/fontforge/Unicode/makeutype.c: In function 'FigureAlternates_lfv':
+/home/dm/.cache/kiss/build-25530/fontforge/Unicode/makeutype.c:341:8: warning: 't' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  341 |     if ( t!=3 ) {
+      |        ^
+/home/dm/.cache/kiss/build-25530/fontforge/Unicode/makeutype.c: In function 'readin':
+/home/dm/.cache/kiss/build-25530/fontforge/Unicode/makeutype.c:604:6: warning: 'strncpy' destination unchanged after copying no bytes [-Wstringop-truncation]
+  604 |      strncpy(oldname,pt,pt1-pt); oldname[pt1-pt] = '\0';
+      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/dm/.cache/kiss/build-25530/fontforge/Unicode/makeutype.c:502:49: warning: 'wasfirst' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  502 |     long index, lc, uc, tc, flg, val, indexend, wasfirst;
+      |                                                 ^~~~~~~~
+[  1%] Linking C executable ../bin/makeutype
+[  1%] Built target makeutype
+Scanning dependencies of target gunicode
+[  2%] Building C object Unicode/CMakeFiles/gunicode.dir/ArabicForms.c.o
+[  2%] Building C object Unicode/CMakeFiles/gunicode.dir/char.c.o
+[  2%] Building C object Unicode/CMakeFiles/gunicode.dir/gwwiconv.c.o
+[  2%] Building C object Unicode/CMakeFiles/gunicode.dir/is_Ligature.c.o
+[  3%] Building C object Unicode/CMakeFiles/gunicode.dir/memory.c.o
+[  3%] Building C object Unicode/CMakeFiles/gunicode.dir/ucharmap.c.o
+[  3%] Building C object Unicode/CMakeFiles/gunicode.dir/unialt.c.o
+[  3%] Building C object Unicode/CMakeFiles/gunicode.dir/ustring.c.o
+[  4%] Building C object Unicode/CMakeFiles/gunicode.dir/utype.c.o
+[  4%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/alphabet.c.o
+[  4%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/big5.c.o
+[  5%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/big5hkscs.c.o
+[  5%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/gb2312.c.o
+[  5%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_10.c.o
+[  5%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_11.c.o
+[  6%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_13.c.o
+[  6%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_14.c.o
+[  6%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_15.c.o
+[  6%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_16.c.o
+[  7%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_1.c.o
+[  7%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_2.c.o
+[  7%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_3.c.o
+[  7%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_4.c.o
+[  8%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_5.c.o
+[  8%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_6.c.o
+[  8%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_7.c.o
+[  9%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_8.c.o
+[  9%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/iso_8859_9.c.o
+[  9%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/jis201.c.o
+[  9%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/jis.c.o
+[ 10%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/johab.c.o
+[ 10%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/koi8_r.c.o
+[ 10%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/ksc5601.c.o
+[ 10%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/mac.c.o
+[ 11%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/MacSymbol.c.o
+[ 11%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/win.c.o
+[ 11%] Building C object Unicode/CMakeFiles/gunicode.dir/charset/ZapfDingbats.c.o
+[ 11%] Built target gunicode
+Scanning dependencies of target gutils
+[ 12%] Building C object gutils/CMakeFiles/gutils.dir/dlist.c.o
+[ 12%] Building C object gutils/CMakeFiles/gutils.dir/fsys.c.o
+[ 12%] Building C object gutils/CMakeFiles/gutils.dir/gcol.c.o
+[ 12%] Building C object gutils/CMakeFiles/gutils.dir/g_giomime.c.o
+[ 13%] Building C object gutils/CMakeFiles/gutils.dir/gimage.c.o
+[ 13%] Building C object gutils/CMakeFiles/gutils.dir/gimagereadbmp.c.o
+[ 13%] Building C object gutils/CMakeFiles/gutils.dir/gimageread.c.o
+[ 13%] Building C object gutils/CMakeFiles/gutils.dir/gimagereadgif.c.o
+[ 14%] Building C object gutils/CMakeFiles/gutils.dir/gimagereadjpeg.c.o
+[ 14%] Building C object gutils/CMakeFiles/gutils.dir/gimagereadpng.c.o
+[ 14%] Building C object gutils/CMakeFiles/gutils.dir/gimagereadras.c.o
+[ 15%] Building C object gutils/CMakeFiles/gutils.dir/gimagereadrgb.c.o
+[ 15%] Building C object gutils/CMakeFiles/gutils.dir/gimagereadtiff.c.o
+[ 15%] Building C object gutils/CMakeFiles/gutils.dir/gimagereadxbm.c.o
+[ 15%] Building C object gutils/CMakeFiles/gutils.dir/gimagereadxpm.c.o
+[ 17%] Building C object gutils/CMakeFiles/gutils.dir/gimagewritebmp.c.o
+[ 17%] Building C object gutils/CMakeFiles/gutils.dir/gimagewritegimage.c.o
+[ 17%] Building C object gutils/CMakeFiles/gutils.dir/gimagewritejpeg.c.o
+[ 17%] Building C object gutils/CMakeFiles/gutils.dir/gimagewritepng.c.o
+[ 18%] Building C object gutils/CMakeFiles/gutils.dir/gimagewritexbm.c.o
+[ 18%] Building C object gutils/CMakeFiles/gutils.dir/gimagewritexpm.c.o
+[ 18%] Building C object gutils/CMakeFiles/gutils.dir/gio.c.o
+[ 19%] Building C object gutils/CMakeFiles/gutils.dir/giofile.c.o
+[ 19%] Building C object gutils/CMakeFiles/gutils.dir/giotrans.c.o
+[ 19%] Building C object gutils/CMakeFiles/gutils.dir/gutils.c.o
+[ 19%] Building C object gutils/CMakeFiles/gutils.dir/gwwintl.c.o
+[ 20%] Building C object gutils/CMakeFiles/gutils.dir/prefs.c.o
+[ 20%] Building C object gutils/CMakeFiles/gutils.dir/unicodelibinfo.c.o
+[ 20%] Built target gutils
+Scanning dependencies of target fontforge
+[ 21%] Building C object fontforge/CMakeFiles/fontforge.dir/activeinui.c.o
+[ 21%] Building C object fontforge/CMakeFiles/fontforge.dir/asmfpst.c.o
+[ 21%] Building C object fontforge/CMakeFiles/fontforge.dir/autohint.c.o
+[ 21%] Building C object fontforge/CMakeFiles/fontforge.dir/autosave.c.o
+[ 22%] Building C object fontforge/CMakeFiles/fontforge.dir/autotrace.c.o
+[ 22%] Building C object fontforge/CMakeFiles/fontforge.dir/autowidth.c.o
+[ 22%] Building C object fontforge/CMakeFiles/fontforge.dir/autowidth2.c.o
+[ 23%] Building C object fontforge/CMakeFiles/fontforge.dir/bezctx_ff.c.o
+[ 23%] Building C object fontforge/CMakeFiles/fontforge.dir/bitmapchar.c.o
+[ 23%] Building C object fontforge/CMakeFiles/fontforge.dir/bitmapcontrol.c.o
+[ 23%] Building C object fontforge/CMakeFiles/fontforge.dir/bvedit.c.o
+[ 24%] Building C object fontforge/CMakeFiles/fontforge.dir/clipnoui.c.o
+[ 24%] Building C object fontforge/CMakeFiles/fontforge.dir/crctab.c.o
+[ 24%] Building C object fontforge/CMakeFiles/fontforge.dir/cvexport.c.o
+[ 24%] Building C object fontforge/CMakeFiles/fontforge.dir/cvimages.c.o
+[ 25%] Building C object fontforge/CMakeFiles/fontforge.dir/cvundoes.c.o
+[ 25%] Building C object fontforge/CMakeFiles/fontforge.dir/dumpbdf.c.o
+[ 25%] Building C object fontforge/CMakeFiles/fontforge.dir/dumppfa.c.o
+[ 26%] Building C object fontforge/CMakeFiles/fontforge.dir/effects.c.o
+[ 26%] Building C object fontforge/CMakeFiles/fontforge.dir/encoding.c.o
+/home/dm/.cache/kiss/build-25530/fontforge/fontforge/encoding.c: In function 'CompressCMap':
+/home/dm/.cache/kiss/build-25530/fontforge/fontforge/encoding.c:1414:19: warning: argument 1 range [18446744071562067969, 18446744073709551615] exceeds maximum object size 9223372036854775807 [-Walloc-size-larger-than=]
+ 1414 |     cmap->remap = calloc(cmap->groups[cmt_coderange].n+1,sizeof(struct remap));
+      |                   ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/glib-2.0/glib/gutils.h:433,
+                 from /usr/include/glib-2.0/glib/gthread.h:34,
+                 from /usr/include/glib-2.0/glib/gasyncqueue.h:32,
+                 from /usr/include/glib-2.0/glib.h:32,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:22,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/inc/ffglib.h:29,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/baseviews.h:31,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/encoding.h:4,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/encoding.c:30:
+/usr/include/stdlib.h:39:7: note: in a call to allocation function 'calloc' declared here
+   39 | void *calloc (size_t, size_t);
+      |       ^~~~~~
+[ 26%] Building C object fontforge/CMakeFiles/fontforge.dir/featurefile.c.o
+[ 26%] Building C object fontforge/CMakeFiles/fontforge.dir/flaglist.c.o
+[ 27%] Building C object fontforge/CMakeFiles/fontforge.dir/fontviewbase.c.o
+[ 27%] Building C object fontforge/CMakeFiles/fontforge.dir/freetype.c.o
+[ 27%] Building C object fontforge/CMakeFiles/fontforge.dir/ftdelta.c.o
+[ 27%] Building C object fontforge/CMakeFiles/fontforge.dir/fvcomposite.c.o
+[ 28%] Building C object fontforge/CMakeFiles/fontforge.dir/fvfonts.c.o
+[ 28%] Building C object fontforge/CMakeFiles/fontforge.dir/fvimportbdf.c.o
+[ 28%] Building C object fontforge/CMakeFiles/fontforge.dir/fvmetrics.c.o
+[ 29%] Building C object fontforge/CMakeFiles/fontforge.dir/glif_name_hash.c.o
+[ 29%] Building C object fontforge/CMakeFiles/fontforge.dir/glyphcomp.c.o
+[ 29%] Building C object fontforge/CMakeFiles/fontforge.dir/groups.c.o
+[ 29%] Building C object fontforge/CMakeFiles/fontforge.dir/ikarus.c.o
+[ 30%] Building C object fontforge/CMakeFiles/fontforge.dir/langfreq.c.o
+[ 30%] Building C object fontforge/CMakeFiles/fontforge.dir/lookups.c.o
+[ 30%] Building C object fontforge/CMakeFiles/fontforge.dir/macbinary.c.o
+[ 30%] Building C object fontforge/CMakeFiles/fontforge.dir/macenc.c.o
+[ 31%] Building C object fontforge/CMakeFiles/fontforge.dir/mathconstants.c.o
+[ 31%] Building C object fontforge/CMakeFiles/fontforge.dir/mem.c.o
+[ 31%] Building C object fontforge/CMakeFiles/fontforge.dir/mm.c.o
+[ 32%] Building C object fontforge/CMakeFiles/fontforge.dir/namelist.c.o
+[ 32%] Building C object fontforge/CMakeFiles/fontforge.dir/nonlineartrans.c.o
+[ 32%] Building C object fontforge/CMakeFiles/fontforge.dir/noprefs.c.o
+[ 32%] Building C object fontforge/CMakeFiles/fontforge.dir/nouiutil.c.o
+[ 34%] Building C object fontforge/CMakeFiles/fontforge.dir/nowakowskittfinstr.c.o
+[ 34%] Building C object fontforge/CMakeFiles/fontforge.dir/ofl.c.o
+[ 34%] Building C object fontforge/CMakeFiles/fontforge.dir/othersubrs.c.o
+[ 34%] Building C object fontforge/CMakeFiles/fontforge.dir/palmfonts.c.o
+[ 35%] Building C object fontforge/CMakeFiles/fontforge.dir/parsepdf.c.o
+[ 35%] Building C object fontforge/CMakeFiles/fontforge.dir/parsepfa.c.o
+[ 35%] Building C object fontforge/CMakeFiles/fontforge.dir/parsettf.c.o
+In function 'MMFillFromVAR',
+    inlined from 'SFFillFromTTF' at /home/dm/.cache/kiss/build-25530/fontforge/fontforge/parsettf.c:6261:2:
+/home/dm/.cache/kiss/build-25530/fontforge/fontforge/parsettf.c:5901:20: warning: argument 1 range [18446744071562067968, 18446744073709551615] exceeds maximum object size 9223372036854775807 [-Walloc-size-larger-than=]
+ 5901 |     mm->axismaps = calloc(v->axis_count,sizeof(struct axismap));
+      |                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/dm/.cache/kiss/build-25530/fontforge/inc/basics.h:38,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/splinefont.h:31,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/parsettf.h:6,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/parsettf.c:30:
+/home/dm/.cache/kiss/build-25530/fontforge/fontforge/parsettf.c: In function 'SFFillFromTTF':
+/usr/include/stdlib.h:39:7: note: in a call to allocation function 'calloc' declared here
+   39 | void *calloc (size_t, size_t);
+      |       ^~~~~~
+[ 35%] Building C object fontforge/CMakeFiles/fontforge.dir/parsettfatt.c.o
+/home/dm/.cache/kiss/build-25530/fontforge/fontforge/parsettfatt.c: In function 'morx_figure_ligatures':
+/home/dm/.cache/kiss/build-25530/fontforge/fontforge/parsettfatt.c:3874:13: warning: writing 1 byte into a region of size 0 [-Wstringop-overflow=]
+ 3874 |       *comp = '\0';
+      |       ~~~~~~^~~~~~
+/home/dm/.cache/kiss/build-25530/fontforge/fontforge/parsettfatt.c:3873:14: note: at offset 0 to an object with size 0 allocated by 'malloc' here
+ 3873 |       comp = malloc(len);
+      |              ^~~~~~~~~~~
+[ 36%] Building C object fontforge/CMakeFiles/fontforge.dir/parsettfbmf.c.o
+[ 36%] Building C object fontforge/CMakeFiles/fontforge.dir/parsettfvar.c.o
+[ 36%] Building C object fontforge/CMakeFiles/fontforge.dir/print.c.o
+[ 37%] Building C object fontforge/CMakeFiles/fontforge.dir/psread.c.o
+[ 37%] Building C object fontforge/CMakeFiles/fontforge.dir/pua.c.o
+[ 37%] Building C object fontforge/CMakeFiles/fontforge.dir/python.c.o
+[ 37%] Building C object fontforge/CMakeFiles/fontforge.dir/savefont.c.o
+[ 38%] Building C object fontforge/CMakeFiles/fontforge.dir/scripting.c.o
+/home/dm/.cache/kiss/build-25530/fontforge/fontforge/scripting.c: In function 'ProcessNativeScript':
+/home/dm/.cache/kiss/build-25530/fontforge/fontforge/scripting.c:10858:16: warning: argument 1 range [18446744071562067968, 18446744073709551615] exceeds maximum object size 9223372036854775807 [-Walloc-size-larger-than=]
+10858 |     c.a.vals = calloc(c.a.argc, sizeof(Val));
+      |                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/glib-2.0/glib/gutils.h:433,
+                 from /usr/include/glib-2.0/glib/gthread.h:34,
+                 from /usr/include/glib-2.0/glib/gasyncqueue.h:32,
+                 from /usr/include/glib-2.0/glib.h:32,
+                 from /usr/include/glib-2.0/gobject/gbinding.h:28,
+                 from /usr/include/glib-2.0/glib-object.h:22,
+                 from /usr/include/glib-2.0/gio/gioenums.h:28,
+                 from /usr/include/glib-2.0/gio/giotypes.h:28,
+                 from /usr/include/glib-2.0/gio/gio.h:26,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/inc/ffglib.h:29,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/baseviews.h:31,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/scripting.h:33,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/scripting.c:31:
+/usr/include/stdlib.h:39:7: note: in a call to allocation function 'calloc' declared here
+   39 | void *calloc (size_t, size_t);
+      |       ^~~~~~
+[ 38%] Building C object fontforge/CMakeFiles/fontforge.dir/scstyles.c.o
+[ 38%] Building C object fontforge/CMakeFiles/fontforge.dir/search.c.o
+[ 38%] Building C object fontforge/CMakeFiles/fontforge.dir/sfd.c.o
+/home/dm/.cache/kiss/build-25530/fontforge/fontforge/sfd.c: In function 'SFD_Dump':
+/home/dm/.cache/kiss/build-25530/fontforge/fontforge/sfd.c:2907:13: warning: argument 1 range [18446744065119617024, 18446744073709551612] exceeds maximum object size 9223372036854775807 [-Walloc-size-larger-than=]
+ 2907 |   newgids = malloc(sf->glyphcnt*sizeof(int));
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/dm/.cache/kiss/build-25530/fontforge/inc/basics.h:38,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/splinefont.h:31,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/sfd.h:6,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/sfd.c:30:
+/usr/include/stdlib.h:38:7: note: in a call to allocation function 'malloc' declared here
+   38 | void *malloc (size_t);
+      |       ^~~~~~
+[ 39%] Building C object fontforge/CMakeFiles/fontforge.dir/sfd1.c.o
+[ 39%] Building C object fontforge/CMakeFiles/fontforge.dir/sflayout.c.o
+[ 39%] Building C object fontforge/CMakeFiles/fontforge.dir/spiro.c.o
+[ 40%] Building C object fontforge/CMakeFiles/fontforge.dir/splinechar.c.o
+[ 40%] Building C object fontforge/CMakeFiles/fontforge.dir/splinefill.c.o
+[ 40%] Building C object fontforge/CMakeFiles/fontforge.dir/splinefit.c.o
+[ 40%] Building C object fontforge/CMakeFiles/fontforge.dir/splinefont.c.o
+[ 41%] Building C object fontforge/CMakeFiles/fontforge.dir/splineorder2.c.o
+[ 41%] Building C object fontforge/CMakeFiles/fontforge.dir/splineoverlap.c.o
+In file included from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/edgelist2.h:31,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/splineoverlap.h:4,
+                 from /home/dm/.cache/kiss/build-25530/fontforge/fontforge/splineoverlap.c:30:
+/home/dm/.cache/kiss/build-25530/fontforge/fontforge/splinefont.h:468:36: warning: ISO C restricts enumerator values to range of 'int' [-Wpedantic]
+  468 |  pst_markclass=0xff00, pst_markset=0xffff0000 };
+      |                                    ^~~~~~~~~~
+[ 41%] Building C object fontforge/CMakeFiles/fontforge.dir/splinerefigure.c.o
+[ 41%] Building C object fontforge/CMakeFiles/fontforge.dir/splinesave.c.o
+[ 42%] Building C object fontforge/CMakeFiles/fontforge.dir/splinesaveafm.c.o
+[ 42%] Building C object fontforge/CMakeFiles/fontforge.dir/splinestroke.c.o
+[ 42%] Building C object fontforge/CMakeFiles/fontforge.dir/splineutil.c.o
+[ 43%] Building C object fontforge/CMakeFiles/fontforge.dir/splineutil2.c.o
+[ 43%] Building C object fontforge/CMakeFiles/fontforge.dir/start.c.o
+[ 43%] Building C object fontforge/CMakeFiles/fontforge.dir/stemdb.c.o
+[ 43%] Building C object fontforge/CMakeFiles/fontforge.dir/svg.c.o
+[ 44%] Building C object fontforge/CMakeFiles/fontforge.dir/tottf.c.o
+[ 44%] Building C object fontforge/CMakeFiles/fontforge.dir/tottfaat.c.o
+[ 44%] Building C object fontforge/CMakeFiles/fontforge.dir/tottfgpos.c.o
+[ 44%] Building C object fontforge/CMakeFiles/fontforge.dir/tottfvar.c.o
+[ 45%] Building C object fontforge/CMakeFiles/fontforge.dir/ttfinstrs.c.o
+[ 45%] Building C object fontforge/CMakeFiles/fontforge.dir/ttfspecial.c.o
+[ 45%] Building C object fontforge/CMakeFiles/fontforge.dir/ufo.c.o
+[ 46%] Building C object fontforge/CMakeFiles/fontforge.dir/unicoderange.c.o
+[ 46%] Building C object fontforge/CMakeFiles/fontforge.dir/utanvec.c.o
+[ 46%] Building C object fontforge/CMakeFiles/fontforge.dir/winfonts.c.o
+[ 46%] Building C object fontforge/CMakeFiles/fontforge.dir/woff.c.o
+[ 47%] Building C object fontforge/CMakeFiles/fontforge.dir/zapfnomen.c.o
+[ 47%] Building CXX object fontforge/CMakeFiles/fontforge.dir/woff2.cc.o
+[ 47%] Linking CXX shared library ../lib/libfontforge.so
+[ 47%] Built target fontforge
+Scanning dependencies of target gdraw
+[ 47%] Building C object gdraw/CMakeFiles/gdraw.dir/choosericons.c.o
+[ 48%] Building C object gdraw/CMakeFiles/gdraw.dir/ctlvalues.c.o
+[ 48%] Building C object gdraw/CMakeFiles/gdraw.dir/div_tables.c.o
+[ 48%] Building C object gdraw/CMakeFiles/gdraw.dir/drawboxborder.c.o
+[ 50%] Building C object gdraw/CMakeFiles/gdraw.dir/gaskdlg.c.o
+[ 50%] Building C object gdraw/CMakeFiles/gdraw.dir/gbuttons.c.o
+[ 50%] Building C object gdraw/CMakeFiles/gdraw.dir/gchardlg.c.o
+[ 50%] Building C object gdraw/CMakeFiles/gdraw.dir/gcolor.c.o
+[ 51%] Building C object gdraw/CMakeFiles/gdraw.dir/gcontainer.c.o
+[ 51%] Building C object gdraw/CMakeFiles/gdraw.dir/gdrawable.c.o
+[ 51%] Building C object gdraw/CMakeFiles/gdraw.dir/gdrawbuildchars.c.o
+[ 51%] Building C object gdraw/CMakeFiles/gdraw.dir/gdraw.c.o
+/home/dm/.cache/kiss/build-25530/fontforge/gdraw/gdraw.c: In function 'MacServiceReadFDs':
+/home/dm/.cache/kiss/build-25530/fontforge/gdraw/gdraw.c:1084:5: error: unknown type name 'fd_set'
+ 1084 |     fd_set read, write, except;
+      |     ^~~~~~
+/home/dm/.cache/kiss/build-25530/fontforge/gdraw/gdraw.c:1085:5: error: implicit declaration of function 'FD_ZERO'; did you mean 'NZERO'? [-Werror=implicit-function-declaration]
+ 1085 |     FD_ZERO(&read); FD_ZERO(&write); FD_ZERO(&except);
+      |     ^~~~~~~
+      |     NZERO
+/home/dm/.cache/kiss/build-25530/fontforge/gdraw/gdraw.c:1086:20: error: storage size of 'timeout' isn't known
+ 1086 |     struct timeval timeout;
+      |                    ^~~~~~~
+/home/dm/.cache/kiss/build-25530/fontforge/gdraw/gdraw.c:1094:2: error: implicit declaration of function 'FD_SET' [-Werror=implicit-function-declaration]
+ 1094 |  FD_SET(cb->fd,&read);
+      |  ^~~~~~
+/home/dm/.cache/kiss/build-25530/fontforge/gdraw/gdraw.c:1099:8: error: implicit declaration of function 'select' [-Werror=implicit-function-declaration]
+ 1099 |  ret = select(fd+1,&read,&write,&except,&timeout);
+      |        ^~~~~~
+/home/dm/.cache/kiss/build-25530/fontforge/gdraw/gdraw.c:1104:6: error: implicit declaration of function 'FD_ISSET' [-Werror=implicit-function-declaration]
+ 1104 |  if( FD_ISSET(cb->fd,&read))
+      |      ^~~~~~~~
+cc1: some warnings being treated as errors
+make[2]: *** [gdraw/CMakeFiles/gdraw.dir/build.make:226: gdraw/CMakeFiles/gdraw.dir/gdraw.c.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:1457: gdraw/CMakeFiles/gdraw.dir/all] Error 2
+make: *** [Makefile:183: all] Error 2

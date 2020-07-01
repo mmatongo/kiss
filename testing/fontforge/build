@@ -17,7 +17,7 @@ cmake -B build . \
 		-DENABLE_LIBTIFF=ON \
 		-DENABLE_WOFF2=ON \
 		-DENABLE_DOCS=OFF \
-		$CMAKE_CROSSOPTS .
+        -DENABLE_GETTEXT=OFF
 
 make -C build
 make DESTDIR="$1" install

@@ -11,9 +11,3 @@ cmake . \
 
 make
 make DESTDIR="$1" PREFIX=/usr install
-
-mv "$1/usr/lib/libwoff2common.so.*" "$1/usr/lib"
-mv "$1/usr/lib/libwoff2enc.so.*" "$1/usr/lib"
-mv "$1/usr/lib/libwoff2dec.so.*"  "$1/usr/lib"
-
-install -Dt "$1/usr/share/licenses/woff2" -m644 woff2/LICENSE
