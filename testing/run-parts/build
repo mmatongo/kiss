@@ -1,1 +1,10 @@
 #!/bin/sh -e
+
+./configure \
+		--prefix=/usr \
+		--bindir=/bin
+
+make
+
+install -D -m755 run-parts "$1/bin/run-parts"
+install -D -m644 run-parts.8 "$1/usr/share/man/man8/run-parts.8"
