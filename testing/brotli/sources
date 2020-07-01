@@ -1,1 +1,2 @@
 https://github.com/google/brotli/archive/v1.0.7.tar.gz
+patches/build-tool-against-shared-lib.patch
