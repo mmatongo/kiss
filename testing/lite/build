@@ -1,5 +1,13 @@
 #!/bin/sh -e
 
-./build.sh
+export DESTDIR="$1"
 
-install -Dm755 lite "$1/usr/bin/"
+./build.sh
+meson \
+    --prefix=/usr \
+    build
+
+ninja -C build
+
+install -Dm755 lite "$1/usr/bin/lite"
+ninja -C build install
