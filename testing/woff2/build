@@ -1,1 +1,12 @@
 #!/bin/sh -e
+
+sed -i 's/NOT BUILD_SHARED_LIBS/TRUE/' CMakeLists.txt
+
+cmake -Hwoff2 -Bbuild \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib
+cmake --build build
+
+DESTDIR="$1" cmake --build build --target install
+
+install -Dt "$1/usr/share/licenses/woff2" -m644 woff2/LICENSE
