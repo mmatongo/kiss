@@ -4,7 +4,8 @@
             --sysconfdir=/etc  \
             --libdir=/usr/lib   \
             --enable-securedir=/lib/security \
-            --docdir=/usr/share/doc/Linux-PAM-1.4.0
+            --docdir=/usr/share/doc/Linux-PAM-1.4.0 \
+            --disable-nls
 
 make
 
