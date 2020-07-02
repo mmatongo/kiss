@@ -1,1 +1,11 @@
 #!/bin/sh -e
+
+./configure --prefix=/usr  \
+            --sysconfdir=/etc  \
+            --libdir=/usr/lib   \
+            --enable-securedir=/lib/security \
+            --docdir=/usr/share/doc/Linux-PAM-1.4.0
+
+make
+
+install -m755 -d /etc/pam.d
