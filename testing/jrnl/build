@@ -1,1 +1,5 @@
 #!/bin/sh -e
+
+python setup.py install --root="$1"
+
+install -Dm644 LICENSE.md "$1/usr/share/licenses/jrnl/LICENSE"
