@@ -1,1 +1,19 @@
 #!/bin/sh -e
+
+make release=1 \
+       FLAGS="--release --no-debug" \
+       CRYSTAL_PATH="$1/crystal-0.35.1/src" \
+       CRYSTAL_CONFIG_VERSION="0.35.1r" \
+       CRYSTAL_CONFIG_PATH="lib:/usr/lib/crystal" \
+       CRYSTAL_CACHE_DIR="/tmp/crystal"
+make docs CRYSTAL_CACHE_DIR="/tmp/crystal"
+
+install -Dm755 "crystal" "$1/usr/bin/crystal"
+install -dm755 "$1/usr/lib" "$1/usr/share/man/man1"
+
+cp -r src "$1/usr/lib/crystal"
+
+install -dm755 "$1/usr/share/doc/crystal"
+cp -r docs "$1/usr/share/doc/crystal/api"
+
+install -Dm644 man/crystal.1 "$1/usr/share/man/man1/"
