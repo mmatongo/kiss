@@ -3,10 +3,6 @@
 # Patch it
 patch -p1 < kernel-no-perl.patch
 
-# Set the kernel up for success!
-scripts/setlocalversion --save-scmversion
-make kernelrelease > version
-
 # Make section
 make mrproper
 
