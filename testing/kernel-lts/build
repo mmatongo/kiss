@@ -5,6 +5,7 @@ patch -p1 < kernel-no-perl.patch
 
 # Set the kernel up for success!
 scripts/setlocalversion --save-scmversion
+make kernelrelease > version
 
 # Make section
 make mrproper
@@ -56,4 +57,6 @@ echo "Installing kernel..."
 mkdir -p "$1/boot"
 install -Dm644 "arch/x86/boot/bzImage" "$1/boot/vmlinuz-$2"
 install -Dm644 "System.map"            "$1/boot/System.map-$2"
-install -Dm644 ".config"               "$1/boot/Config-$2"fi
+install -Dm644 ".config"               "$1/boot/Config-$2"
+
+echo "Done..."
