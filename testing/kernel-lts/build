@@ -1,24 +1,26 @@
 #!/bin/sh -e
 
-# Patch it
+# patch it
 patch -p1 < kernel-no-perl.patch
 
-# Make section
+# spring cleaning
 make mrproper
 
-# Rename the binary temporarily.
+# rename the config.
 mv "config" ".config"
 
 # Useful variables
-#modulesdir="$1/usr/lib/modules/$2"
-#builddir="$modulesdir/build"
+modulesdir="$1/usr/lib/modules/$2"
+builddir="$modulesdir/build"
 
-# Make that bad boy!
+# make kernel
 echo "Making linux-$2"
 make -j "$(nproc)"
 
+# install modules
 echo "Installing modules..."
 make INSTALL_MOD_PATH="$1/usr" modules_install
+
 
 echo "Cleaning up..."
 rm "$modulesdir/build" "$modulesdir/source"
@@ -43,7 +45,7 @@ chmod -Rc u=rwX,go=rX "$1"
 echo "Removing cruft..."
 rm   -r "$builddir/Documentation"
 find -L "$builddir" -type l             -exec rm -rf {} +
-nd"$builddir" -type f -name "*.o" -exec rm -rf {} +
+find    "$builddir" -type f -name "*.o" -exec rm -rf { +
 
 echo "Laying trap..."
 mkdir -p "$1/usr/src"
@@ -53,6 +55,8 @@ echo "Installing kernel..."
 mkdir -p "$1/boot"
 install -Dm644 "arch/x86/boot/bzImage" "$1/boot/vmlinuz-$2"
 install -Dm644 "System.map"            "$1/boot/System.map-$2"
-install -Dm644 ".config"               "$1/boot/Config-$2"
+install -Dm644 ".config"               "$1/boot/Config-$2}"
 
-echo "Done..."
+echo "done.."
+
+echo "KISSSSSSSS"
