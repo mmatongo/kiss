@@ -1,1 +1,4 @@
-
+https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.4.50.tar.xz
+files/config
+patches/kernel-no-perl.patch
+patches/gcc-10.patch
