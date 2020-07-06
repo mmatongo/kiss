@@ -10,8 +10,8 @@ make mrproper
 mv "config" ".config"
 
 # Useful variables
-modulesdir="$1/usr/lib/modules/$2"
-builddir="$modulesdir/build"
+#modulesdir="$1/usr/lib/modules/$2"
+#builddir="$modulesdir/build"
 
 # Make that bad boy!
 echo "Making linux-$2"
