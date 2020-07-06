@@ -26,7 +26,7 @@ echo "Cleaning up..."
 rm "$modulesdir/build" "$modulesdir/source"
 
 echo "Copying files to build external modules..."
-install -Dt "$builddir"                 -m644 .config Makefile Module.symvers System.map version vmlinux
+install -Dt "$builddir"                 -m644 .config Makefile Module.symvers System.map vmlinux
 install -Dt "$builddir/arch/x86"        -m644 arch/x86/Makefile
 install -Dt "$builddir/arch/x86/kernel" -m644 arch/x86/kernel/asm-offsets.s
 install -Dt "$builddir/kernel"          -m644 kernel/Makefile
@@ -45,7 +45,7 @@ chmod -Rc u=rwX,go=rX "$1"
 echo "Removing cruft..."
 rm   -r "$builddir/Documentation"
 find -L "$builddir" -type l             -exec rm -rf {} +
-find    "$builddir" -type f -name "*.o" -exec rm -rf { +
+find    "$builddir" -type f -name "*.o" -exec rm -rf {} +
 
 echo "Laying trap..."
 mkdir -p "$1/usr/src"
