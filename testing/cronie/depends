@@ -1,6 +1,0 @@
-pam
-run-parts
-automake make
-flex make
-libtool make
-pkgconf make
