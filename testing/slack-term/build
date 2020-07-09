@@ -1,1 +1,5 @@
 #!/bin/sh -e
+
+make build-linux
+
+make DESTDIR="$1" install
