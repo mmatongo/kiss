@@ -1,0 +1,5 @@
+cmake make
+libX11 make
+libva make
+intel-gmmlib make
+libpciaccess make
