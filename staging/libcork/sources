@@ -1,1 +1,2 @@
-https://github.com/shadowsocks/libcork/archive/0.15.0.tar.gz
+patches/fix-dumb-script.patch
+https://github.com/dcreager/libcork/archive/0.15.0.tar.gz
