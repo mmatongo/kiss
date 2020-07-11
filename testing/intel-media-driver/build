@@ -1,14 +1,20 @@
 #!/bin/sh -e
 
+export DESTDIR="$1"
+
+sed -i 's/SHARED/STATIC/' gmmlib/Source/GmmLib/CMakeLists.txt
+
+cd media
+
 cmake -B build \
 		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DCMAKE_INSTALL_LIBDIR=/usr/lib \
-		-DBUILD_SHARED_LIBS=True \
-		-DCMAKE_BUILD_TYPE=None \
-		-DCMAKE_CXX_FLAGS="$CXXFLAGS" \
-		-DCMAKE_C_FLAGS="$CFLAGS" \
+        -DBS_DIR_GMMLIB="$OLDPWD/gmmlib/Source/GmmLib" \
 		-DINSTALL_DRIVER_SYSCONF=OFF \
-		-Wno-dev
+        -DRUN_TEST_SUITE=OFF 
 
-make -C build
-make -C build DESTDIR="$1" install
+cmake --build   build
+cmake --install build
+
+rm -rf "$1/usr/include/igdgmm" \
+       "$1/usr/lib/pkgconfig/igdgmm.pc"
