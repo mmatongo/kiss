@@ -5,7 +5,7 @@
 
 #sed -i 's|AC_CONFIG_FILES(\[libbloom/Makefile libcork/Makefile libipset/Makefile\])||' configure.ac
 
-cmake . \
+cmake  \
 		-DCMAKE_BUILD_TYPE=None \
 		-DCMAKE_INSTALL_PREFIX=/usr \
 		-DENABLE_STATIC=OFF \

@@ -1,2 +1,2 @@
 patches/fix-dumb-script.patch
-https://github.com/dcreager/libcork/archive/0.15.0.tar.gz
+git+https://github.com/dcreager/libcork#a89596c
