@@ -2,14 +2,14 @@
 
 go build \
         -trimpath \
-        -ldflags "-extldflags $LDFLAGS -X github.com/cli/cli/command.Version=v0.10.1 -X github.com/cli/cli/command.BuildDate=$(date +%Y-%m-%d)" -o "bin/gh" ./cmd/gh
+        -ldflags "-extldflags $LDFLAGS -X github.com/cli/cli/command.Version=v0.10.1 -X github.com/cli/cli/command.BuildDate=$(date +%Y-%m-%d)" -o "bin/gh" cmd/gh
 
-go run ./cmd/gen-docs --man-page --doc-path ./share/man/man1/
+go run cmd/gen-docs --man-page --doc-path share/man/man1/
 
-mkdir ./_completions
-bin/gh completion -s bash > ./_completions/bash
-bin/gh completion -s zsh > ./_completions/zsh
-bin/gh completion -s fish > ./_completions/fish
+mkdir _completions
+bin/gh completion -s bash > _completions/bash
+bin/gh completion -s zsh > _completions/zsh
+bin/gh completion -s fish > _completions/fish
 
 install -Dm755 "bin/gh" "$1/usr/bin/gh"
 install -Dm644 "LICENSE" "$1/usr/share/licenses/github-cli"
