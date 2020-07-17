@@ -1,20 +1,15 @@
 #!/bin/sh -e
 
-go build \
-        -trimpath \
-        -ldflags "-extldflags $LDFLAGS -X github.com/cli/cli/command.Version=v0.10.1 -X github.com/cli/cli/command.BuildDate=$(date +%Y-%m-%d)" -o "bin/gh" cmd/gh
-
-go run cmd/gen-docs --man-page --doc-path share/man/man1/
+make
 
 mkdir _completions
-bin/gh completion -s bash > _completions/bash
-bin/gh completion -s zsh > _completions/zsh
-bin/gh completion -s fish > _completions/fish
+bin/gh completion -s bash > ./_completions/bash
+bin/gh completion -s zsh > ./_completions/zsh
+bin/gh completion -s fish > ./_completions/fish
+
+install -Dm644 "_completions/bash" "$1/usr/share/bash-completion/completions/gh"
+install -Dm644 "_completions/zsh" "$1/usr/share/zsh/site-functions/_gh"
 
 install -Dm755 "bin/gh" "$1/usr/bin/gh"
 install -Dm644 "LICENSE" "$1/usr/share/licenses/github-cli"
-install -Dm644 "README.md" "$1/usr/share/doc/github-cli/README.md"
-install -Dm644 "_completions/bash" "$1/usr/share/bash-completion/completions/gh"
-install -Dm644 "_completions/zsh" "$1/usr/share/zsh/site-functions/_gh"
-install -Dm644 "_completions/fish" "$1/usr/share/fish/vendor_completions.d/gh.fish"
-install -Dm644 -t "$1/usr/share/man/man1/" share/man/man1/*
+
