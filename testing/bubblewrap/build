@@ -2,16 +2,14 @@
 
 patch -p1 < realpath-workaround.patch
 
-NOCONFIGURE=1 ./autogen.sh
-default_prepare
+#NOCONFIGURE=1 ./autogen.sh
 
 ./configure \
-		--prefix=/usr \
-		--mandir=/usr/share/man \
-		--infodir=/usr/share/info \
-		--localstatedir=/var \
-		--with-priv-mode=setuid \
-        --with-subdir-objects
+    --prefix=/usr \
+    --mandir=/usr/share/man \
+    --infodir=/usr/share/info \
+    --localstatedir=/var \
+    --with-priv-mode=setuid
 
 make
 make DESTDIR="$1" install

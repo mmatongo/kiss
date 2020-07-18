@@ -1,1 +1,3 @@
 libcap
+autoconf make 
+automake make
