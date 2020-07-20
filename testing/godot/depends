@@ -1,5 +1,5 @@
-scons 
-python 
+scons make
+python make
 libXcursor 
 libXinerama 
 mesa 
