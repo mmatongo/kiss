@@ -13,6 +13,7 @@ repo here -> [dm](https://github.com/mmatongo/dm) <-
 - [] docker
 - [] fontforge
 - [x] godot - `can be built with one less dependacy`
+  ![](https://raw.githubusercontent.com/mmatongo/kiss/master/testing/godot.png)
 - [] howl
 - [x] intel-media-driver/intel-gmmlib - `merged on
   kisslinux/community`
