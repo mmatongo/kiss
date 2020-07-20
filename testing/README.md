@@ -2,7 +2,7 @@
 
 The purpose of this repo is for building and testing builds
 before possibly pushing the community repo or just my own
-repo here -> (dm)[https://github.com/mmatongo/dm] <-
+repo here -> [dm](https://github.com/mmatongo/dm) <-
 
 #### What Works:
 ---
@@ -31,7 +31,7 @@ repo here -> (dm)[https://github.com/mmatongo/dm] <-
 - [x] potrace - `dependancy`
 - [x] run-parts - `dependancy`
 - [x] setconf - `dependancy`
-- [x] slack-term
+- [x] slack-term - `slack or some crap like that`
 - [] vlc
 - [x] woff2 - `dependancy`
 
