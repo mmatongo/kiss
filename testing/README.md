@@ -6,14 +6,13 @@ repo here -> [dm](https://github.com/mmatongo/dm) <-
 
 #### What Works:
 ---
-- [x] brotli - `dependancy`
+ - [x] brotli - `dependancy`
 - [x] bubblewrap - `pull request opened on kiss-community`
 - [x] cabal - `because we love haskell`
 - [] crystal
 - [] docker
 - [] fontforge
 - [x] godot - `can be built with one less dependacy`
-  ![](https://raw.githubusercontent.com/mmatongo/kiss/master/testing/godot.png)
 - [] howl
 - [x] intel-media-driver/intel-gmmlib - `merged on
   kisslinux/community`
@@ -37,3 +36,7 @@ repo here -> [dm](https://github.com/mmatongo/dm) <-
 - [x] woff2 - `dependancy`
 
 For more vist staging...
+
+#### SCREENSHOTS
+ ![](https://raw.githubusercontent.com/mmatongo/kiss/master/testing/godot.png)
+
