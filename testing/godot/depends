@@ -6,3 +6,4 @@ mesa
 libX11 
 libXi 
 libXrandr
+libexecinfo
