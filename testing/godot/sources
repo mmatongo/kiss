@@ -1,1 +1,2 @@
 https://github.com/godotengine/godot/archive/3.2.2-stable.tar.gz
+patches/crash_handler_x11.patch

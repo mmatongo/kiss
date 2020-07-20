@@ -1,1 +1,13 @@
 #!/bin/sh -e
+
+patch -p1 < crash_handler_x11.patch
+
+scons platform=x11 \
+	tools=yes \
+	target=release_debug \
+	use_llvm=no \
+	colored=yes \
+	pulseaudio=no bits=64 -j4
+
+install -D -m755 bin/godot.x11.opt.tools.64 "$1/usr/bin/godot"
+install -D -m644 misc/dist/linux/godot.6 "$1/usr/share/man/man6/godot.6"

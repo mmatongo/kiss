@@ -1,8 +1,7 @@
 #!/bin/sh -e
 
-#patch -p1 < fix-dumb-script.patch
-#echo "0.15.0" > RELEASE-VERSION
-
+patch -p1 < fix-dumb-script.patch
+echo "0.15.0" > RELEASE-VERSION
 #sed -i 's|AC_CONFIG_FILES(\[libbloom/Makefile libcork/Makefile libipset/Makefile\])||' configure.ac
 
 cmake  \

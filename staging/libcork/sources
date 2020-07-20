@@ -1,2 +1,2 @@
 patches/fix-dumb-script.patch
-git+https://github.com/dcreager/libcork#a89596c
+git+https://github.com/dcreager/libcork#d6ecc2cfbcdf5013038a72b4544f7d9e6eb8f92d

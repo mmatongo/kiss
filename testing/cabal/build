@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+for patch in *.patch; do
+    patch -p1 < "$patch"
+done
+
+env HOME="$1" EXTRA_CONFIGURE_OPTS="" ./bootstrap.sh --jobs --no-doc
+
+install -Dm755 dist/build/cabal/cabal "$1/usr/bin/cabal"
+install -Dm644 LICENSE "$1/usr/share/licenses/cabal/LICENSE"

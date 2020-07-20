@@ -1,0 +1,8 @@
+scons 
+python 
+libXcursor 
+libXinerama 
+mesa 
+libX11 
+libXi 
+libXrandr
