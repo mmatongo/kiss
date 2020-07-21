@@ -1,5 +1,0 @@
-#!/bin/sh -e
-
-install -Dm 775 xflux /usr/bin/xflux
-install -Dm 644 f.lux-eula.html /usr/share/licenses/xflux/f.lux-eula.html
-install -Dm 644 f.lux-eula.txt /usr/share/licenses/xflux/f.lux-eula.txt
