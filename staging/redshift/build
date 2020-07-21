@@ -1,5 +1,7 @@
 #!/bin/sh -e
 
+sed -e '19d' configure.ac 
+
 ./configure \
     --prefix=/usr \
     --disable-drm \
@@ -7,10 +9,11 @@
     --disable-geoclue \
     --disable-geoclue2 \
     --disable-ubuntu \
-    --disable-vidmod \
+    --disable-vidmode \
     --disable-gui \
     --disable-nls
 
 make
-
 make DESTDIR="$1" install
+
+install -Dm644 redshift.conf.sample "$1/usr/share/doc/redshift/examples/redshift.conf"

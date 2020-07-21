@@ -1,5 +1,4 @@
-# libdrm
-libXrandr
-# libXxf86vm
+libxcb make
+libXrandr 
+libXxf86vm make
 intltool make
-# python make

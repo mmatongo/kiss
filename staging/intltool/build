@@ -1,6 +1,8 @@
 #!/bin/sh -e
 
-sed -i 's:\\\${:\\\$\\{:' intltool-update.in
+for patch in *.patch; do
+    patch -p1 < "$patch"
+done
 
 ./configure --prefix=/usr
 
