@@ -1,5 +1,6 @@
 community/
 staging/brillo
 staging/calcurse
+testing/docker
 java
 dm
