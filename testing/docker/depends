@@ -1,8 +1,0 @@
-go
-go-md2man
-btrfs-progs
-bash 
-linux-headers
-coreutils 
-lvm2 
-libtool
