@@ -2,5 +2,6 @@ community/
 staging/brillo
 staging/calcurse
 testing/docker
+staging/caball-install
 java
 dm
