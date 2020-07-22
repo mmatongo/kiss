@@ -1,9 +1,20 @@
-scons make
-python make
-libXcursor 
-libXinerama 
-mesa 
-libX11 
-libXi 
+alsa-lib
+expat
+libX11
+libXau
+libXcursor
+libXdamage
+libXext
+libXfixes
+libXi
+libXinerama
 libXrandr
-libexecinfo make
+libXrender
+libXxf86vm
+libdrm
+libexecinfo  make
+libxcb
+libxshmfence
+mesa
+python       make
+scons        make

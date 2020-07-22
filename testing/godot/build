@@ -1,13 +1,32 @@
 #!/bin/sh -e
 
-patch -p1 < crash_handler_x11.patch
+for patch in *.patch; do
+    patch -Np1 -i "$patch"
+done
 
-scons platform=x11 \
-	tools=yes \
-	target=release_debug \
-	use_llvm=no \
-	colored=yes \
-	pulseaudio=no bits=64 -j $((`nproc`))
+sed -i -e 's/#ifdef CRASH_HANDLER_ENABLED/#if defined(CRASH_HANDLER_ENABLED) \&\& defined(__GLIBC__)/' platform/x11/crash_handler_x11.cpp
 
-install -D -m755 bin/godot.x11.opt.tools.64 "$1/usr/bin/godot"
-install -D -m644 misc/dist/linux/godot.6 "$1/usr/share/man/man6/godot.6"
+scons \
+    platform=x11 \
+    tools=yes \
+    target=release_debug \
+    colored=yes \
+    pulseaudio=no \
+    bits=64 \
+    -j"$(nproc)"
+
+cat << EOF > godot.desktop
+[Desktop Entry]
+Name=Godot
+Comment=Application for making games
+Exec=/usr/bin/godot %U
+Icon=godot
+Terminal=false
+Type=Application
+Categories=Utility;Game;
+EOF
+
+install -Dm755 bin/godot.x11.opt.tools.64 "$1/usr/bin/godot"
+install -Dm644 misc/dist/linux/godot.6    "$1/usr/share/man/man6/godot.6"
+install -Dm644 godot.desktop              "$1/usr/share/applications/godot.desktop"
+install -Dm644 icon.svg                   "$1/usr/share/pixmaps/godot.svg"
