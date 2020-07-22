@@ -1,6 +1,4 @@
 #!/bin/sh -e
 
-setconf src/Makefile "CFLAGS = -Wall -O2 -g "'$(LUAJIT_CFLAGS) $(GTK_CFLAGS) -DHOWL_PREFIX=$(PREFIX) '"$CFLAGS"
-
 make -C src
 make -C src PREFIX=/usr DESTDIR="$1" install
