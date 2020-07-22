@@ -1,14 +1,14 @@
 #!/bin/sh -e
-
-patch -p1 < fix-dumb-script.patch
-echo "0.15.0" > RELEASE-VERSION
 #sed -i 's|AC_CONFIG_FILES(\[libbloom/Makefile libcork/Makefile libipset/Makefile\])||' configure.ac
 
+echo "0.15.0" > RELEASE-VERSION
+
+patch -p1 < fix-dumb-script.patch
+rm src/CMakeLists.txt
+
 cmake  \
-		-DCMAKE_BUILD_TYPE=None \
-		-DCMAKE_INSTALL_PREFIX=/usr \
-		-DENABLE_STATIC=OFF \
-		-DCMAKE_INSTALL_LIBDIR=/usr/lib
+	-DCMAKE_INSTALL_PREFIX=/usr \
+	-DCMAKE_INSTALL_LIBDIR=/usr/lib
 
 make
 make DESTDIR="$1" install
