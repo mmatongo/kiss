@@ -1,0 +1,5 @@
+libXext make
+libX11 make
+xorgproto make
+meson make
+samurai make
