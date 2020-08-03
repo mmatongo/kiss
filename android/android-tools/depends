@@ -1,4 +1,7 @@
-eudev
-libusb make
-pcre2 make
 cmake make
+eudev make
+gtest make
+go make
+pcre2 make
+perl make
+libusb make
