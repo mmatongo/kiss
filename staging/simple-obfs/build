@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+for patch in *.patch; do
+    patch -p1 < "$patch"
+done
+
+patch -p1 -i debian/patches/0001-Use-libcork-dev-in-system.patch
+
+git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
+
+./autogen.sh
+./configure --prefix=/usr
+
+make
+make DESTDIR="$1" install

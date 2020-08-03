@@ -1,0 +1,4 @@
+https://github.com/google/googletest/archive/release-1.10.0.tar.gz
+#patches/gtest-1.8.1-libversion.patch
+#patches/gtest-1.8.1-null-pointer.patch
+#patches/gtest-1.10.0-libversion.patch

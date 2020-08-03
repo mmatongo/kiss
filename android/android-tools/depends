@@ -1,0 +1,4 @@
+eudev
+libusb make
+pcre2 make
+cmake make

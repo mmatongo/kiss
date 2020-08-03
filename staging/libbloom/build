@@ -5,6 +5,3 @@ make
 install -Dm644 bloom.h "$1/usr/include/bloom.h"
 install -Dm755 build/libbloom.so.1.6 "$1/usr/lib/libbloom.so.1.6"
 install -Dm755 build/libbloom.so.1.6 "$1/usr/lib/libbloom.so"
-
-#ln -sv libbloom.so.1.6 "$1/usr/lib/libbloom.so"
-#ln -sv libbloom.so.1.6 "$1/usr/lib/libbloom.so.1.6"

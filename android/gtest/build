@@ -1,0 +1,28 @@
+#!/bin/sh -e
+
+echo "1.10.0" >> VERSION
+
+cp patches/gtest-1.10.0-libversion.patch
+
+
+sed "s|__GOOGLETEST_VERSION__|${pkgver}|g" -i gtest-1.10.0-libversion.patch
+sed -E "s|(GOOGLETEST_VERSION) [0-9\\.]+|\\1 ${pkgver}|" -i CMakeLists.txt
+
+#for patch in *.patch; do
+ #   patch -Np1 -i "$patch"
+#done
+
+patch -Np1 < gtest-1.10.0-libversion.patch
+
+cmake -B build . \
+	-DCMAKE_BUILD_TYPE=None \
+	-DCMAKE_INSTALL_PREFIX=/usr \
+	-DCMAKE_INSTALL_LIBDIR=/usr/lib \
+	-DBUILD_SHARED_LIBS=ON \
+	-Dgtest_build_tests=OFF
+
+cmake -C build
+
+DESTDIR="$1" cmake --build build install
+
+find "$1" -name '*.pump' -print -delete

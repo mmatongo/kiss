@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+mkdir build && cd build
+
+cmake .. \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_BUILD_TYPE=None
+
+make
+make DESTDIR="$1" install
