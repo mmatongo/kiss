@@ -6,7 +6,7 @@ cp patches/gtest-1.10.0-libversion.patch
 
 
 sed "s|__GOOGLETEST_VERSION__|1.10.0|g" -i gtest-1.10.0-libversion.patch
-sed -E "s|(GOOGLETEST_VERSION) [0-9\\.]+|\\1 ${pkgver}|" -i CMakeLists.txt
+sed -E "s|(GOOGLETEST_VERSION) [0-9\\.]+|\\1 1.10.0|" -i CMakeLists.txt
 
 #for patch in *.patch; do
  #   patch -Np1 -i "$patch"
