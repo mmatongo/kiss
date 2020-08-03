@@ -9,18 +9,16 @@ Before I push to [main](https://github.com/kisslinux/community) I host everythin
 - [x] cabal-install - `garbage`
 - [x] calcurse - `merged on kisslinux/community`
 - [x] check - `dependancy`
-- [] geany - `I am ashamed of this`
 - [x] gettext - `mf dependancy`
 - [x] github-cli - `merged on kisslinux/community`
 - [x] go-md2man - `garbage`
 - [x] intltool - `mfff dependancy`
 - [x] libloom - `dependancy`
-- [] libcork -`help me, i have failed to build this thing`
+- [x] libcork -`help me, i have failed to build this thing`
 - [x] libcorkipset - `dependancy`
 - [x] mbedtls - `dependancy`
 - [x] redshift - `it works/it doesn't work something like that`
-- [x] shadowsocks-libev - `https://www.youtube.com/watch?v=AiIBKcd4m5Q`
-- [] termite - `because vte sucks`
+- [-] shadowsocks-libev - `https://www.youtube.com/watch?v=AiIBKcd4m5Q`
 - [x] weechat - `I have no memory of this`
 - [x] xflux - `it works, I think`
 - [x] xmlparser - `dependancy`
