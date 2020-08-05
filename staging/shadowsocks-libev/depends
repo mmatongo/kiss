@@ -2,9 +2,10 @@ pcre make
 mbedtls make
 libsodium make
 c-ares make
-libev make
+libev
 pkgconf make
 libcork
 libbloom
 libcorkipset
-
+automake make
+autoconf make

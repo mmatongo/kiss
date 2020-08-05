@@ -1,20 +1,19 @@
 #!/bin/sh -e
 
-#for patch in *.patch; do
-#    patch -p1 < "$patch"
-#done
+for patch in *.patch; do
+    patch -p1 < "$patch"
+done
 
 #git describe --long --tags | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
 #sed -i 's|AC_CONFIG_FILES(\[libbloom/Makefile libcork/Makefile libipset/Makefile\])||' configure.ac
 
-#./autogen.sh
+./autogen.sh
+
 ./configure \
     --prefix=/usr \
-    --sysconfdir=/etc \
     --enable-shared \
-    --localstatedir=/var \
     --enable-system-shared-lib \
     --disable-documentation 
 
 make
-make DESTDIR="$1" PREFIX=/usr install
+make DESTDIR="$1" install
