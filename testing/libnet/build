@@ -1,0 +1,10 @@
+#!/bin/sh -e
+
+patch -p1 < fix-types.patch
+
+./configure \
+    --prefix=/usr \
+    --with-link-layer=linux
+
+make
+make DESTDIR="$1" install
