@@ -1,0 +1,15 @@
+#!/bin/sh -e
+
+patch -p1 < fix-headers.patch
+
+./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --mandir=/usr/share/man \
+    --localstatedir=/var \
+    --enable-ipv6
+
+sleep 1
+
+make all shared
+make DESTDIR="$1" install install-shared
