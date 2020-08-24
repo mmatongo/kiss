@@ -1,1 +1,5 @@
 #!/bin/sh -e
+
+nim compile -d:release src/nimble
+
+install -Dm755 src/nimble "$1/usr/bin/nimble"
