@@ -1,0 +1,56 @@
+#!/bin/sh -e
+
+rm -v bin/empty.txt
+
+echo "$2"
+echo "$1"
+
+echo "Building nim csources..."
+cd csources
+./build.sh
+
+cd ..
+
+echo "Building koch..."
+bin/nim c -d:release koch 
+./koch boot -d:release
+
+echo "Building libs..."
+cd lib 
+../bin/nim c --app:lib -d:createNimRtl -d:release nimrtl.nim
+
+cd ..
+
+echo "Building tools..."
+./koch tools 
+cd tools 
+../bin/nim c -d:release nimgrep.nim
+cd ..
+
+echo "Building nimsuggest..."
+bin/nim c -d:release nimsuggest/nimsuggest.nim
+
+echo "Installing Nim..."
+DESTDIR="$1" ./koch install "$1/usr/bin"
+
+mkdir -p "$1/usr/lib"
+mkdir -p "$1/usr/lib/nim"
+
+cp -a lib "$1/usr/lib/nim"
+cp -a compiler "$1/usr/lib/nim"
+
+install -Dm644 compiler.nimble "$1/usr/lib/nim/compiler"
+install -m755 lib/libnimrtl.so "$1/usr/lib/libnimrtl.so"
+install -Dm644 config/* -t "$1/etc/nim"
+install -Dm755 bin/* -t "$1/usr/bin"
+install -d "$1/usr/include"
+
+cp -a "$1/usr/lib/nim/*.h" "$1/usr/include"
+
+
+#mkdir -p "$1/usr/include"
+
+#local file; for file in usr/lib/nim/*.h; do
+#	mv $file "$1/usr/include/"
+#	ln -s include/${file##*/} usr/lib/nim/${file##*/}
+#done

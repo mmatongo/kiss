@@ -1,0 +1,19 @@
+#!/bin/sh -e
+
+cd csources
+
+echo "Building nim csources..."
+./build.sh
+cd ..
+
+echo "Building koch..."
+bin/nim compile -d:release koch
+
+echo "Building nim..."
+./koch boot -d:release
+
+echo "Building nimsuggest..."
+bin/nim compile -d:release nimsuggest/nimsuggest.nim
+
+DESTDIR="$1" ./koch install "$1/usr/bin"
+
