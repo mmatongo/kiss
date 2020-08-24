@@ -8,8 +8,8 @@ cmake \
     -DCMAKE_BUILD_TYPE=None \
     -DSPIRV_WERROR=OFF \
     -DSPIRV_SKIP_TESTS=ON \
-    -DBUILD_SHARED_LIBS=ON \
-    -DSPIRV-Headers_SOURCE_DIR=SPIRV-Headers 
+    -DBUILD_SHARED_LIBS=ON 
+    -DSPIRV-Headers_SOURCE_DIR=SPIRV-Headers
 
 ninja
 DESTDIR="$1" ninja install
