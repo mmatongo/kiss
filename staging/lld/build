@@ -1,0 +1,18 @@
+#!/bin/sh -e
+
+mkdir -p build
+cd build
+
+cmake .. \
+    -DCMAKE_BUILD_TYPE=MinSizeRel \
+    -DCMAKE_VERBOSE_MAKEFILE=OFF \
+    -DCMAKE_C_FLAGS_MINSIZEREL_INIT="$CFLAGS" \
+    -DCMAKE_CXX_FLAGS_MINSIZEREL_INIT="$CXXFLAGS -fpermissive" \
+    -DCMAKE_EXE_LINKER_FLAGS_MINSIZEREL_INIT="$LDFLAGS -Wl,-z,stack-size=2097152" \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_SKIP_INSTALL_RPATH=ON \
+    -DLLVM_INCLUDE_TESTS=OFF
+
+make
+
+make DESTDIR="$1" install
