@@ -4,8 +4,8 @@ for patch in *.patch; do
     patch -p1 < "$patch"
 done
 
-sed -i -e '/^cflags=/s/"/"$CFLAGS /' \
-    -e '/^lflags=/s/"/"$LDFLAGS /' build.sh
+sed -i -e "/^cflags=/s/"/"$CFLAGS /" \
+    -e "/^lflags=/s/"/"$LDFLAGS /" build.sh
 
 ./build.sh
 
