@@ -9,7 +9,8 @@ cmake \
     -DSPIRV_WERROR=OFF \
     -DSPIRV_SKIP_TESTS=ON \
     -DBUILD_SHARED_LIBS=ON 
-    -DSPIRV-Headers_SOURCE_DIR=SPIRV-Headers
+    -DSPIRV-Headers_SOURCE_DIR="$2/SPIRV-Headers"
 
 ninja
+
 DESTDIR="$1" ninja install
