@@ -1,4 +1,6 @@
 #!/bin/sh -e
 
-make -C src
-make -C src PREFIX=/usr DESTDIR="$1" install
+cd src
+
+make
+make PREFIX=/usr DESTDIR="$1" install
