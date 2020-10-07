@@ -1,2 +1,13 @@
 https://github.com/linux-pam/linux-pam/releases/download/v1.4.0/Linux-PAM-1.4.0.tar.xz
-files/other
+files/base-auth.pamd
+files/base-account.pamd
+files/base-password.pamd
+files/base-session.pamd
+files/base-session-noninteractive.pamd
+files/other.pamd
+files/system-local-login.pamd
+files/system-login.pamd
+files/su.pamd
+patches/c9593778a6133bf29eb2f47c24cc6d2f5d729fc8.patch
+patches/0adbaeb273da1d45213134aa271e95987103281c.patch
+patches/0001-avoid-opendir-since-it-may-be-called-during-fork-exe.patch

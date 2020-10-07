@@ -1,0 +1,6 @@
+bison
+flex
+autoconf
+automake
+libtool
+linux-headers

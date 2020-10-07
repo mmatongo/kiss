@@ -1,12 +1,22 @@
 #!/bin/sh -e
 
-./configure --prefix=/usr  \
-            --sysconfdir=/etc  \
-            --libdir=/usr/lib   \
-            --enable-securedir=/lib/security \
-            --docdir=/usr/share/doc/Linux-PAM-1.4.0 \
-            --disable-nls
+for patch in *.patch; do
+    patch -Np1 < "$patch"
+done
+
+sed -e 's/pam_rhosts//g' -i modules/Makefile.am
+
+#autoreconf -vif .
+
+./configure \
+    --prefix=/usr  \
+    --sysconfdir=/etc  \
+    --libdir=/usr/lib   \
+    --mandir=/usr/share/man \
+    --enable-securedir=/usr/lib/security \
+    --disable-db \
+    --disable-nls
 
 make
+make DESTDIR="$1" install
 
-install -m755 -d /etc/pam.d
