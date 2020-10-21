@@ -1,0 +1,7 @@
+#!/bin/sh -e
+
+export GOFLAGS="$GOFLAGS -buildmode=pie -trimpath -mod=readonly -modcacherw"
+
+make runc
+
+install -Dm755 runc "$1/usr/bin/runc"

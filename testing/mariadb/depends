@@ -1,0 +1,11 @@
+#openssl
+libaio make
+libevent make
+mariadb-connector-c
+ncurses make
+libxml2 make
+pcre2 make
+readline make
+pam make
+bison make
+

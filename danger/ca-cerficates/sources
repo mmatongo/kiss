@@ -1,0 +1,4 @@
+https://gitlab.alpinelinux.org/alpine/ca-certificates/-/archive/20191127/ca-certificates-20191127.tar.bz2
+patches/0001-update-ca-fix-compiler-warning.patch
+patches/0002-replace-python-script-with-perl-script.patch
+patches/0003-update-ca-insert-newline-between-certs.patch

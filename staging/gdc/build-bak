@@ -1,0 +1,52 @@
+#!/bin/sh -e
+
+for patch in *.patch; do
+    patch -p1 < "$patch"
+done
+
+echo "10.2.0" > gcc/BASE-VER
+
+mkdir -p gdc-build
+cd gdc-build
+
+../configure \
+    --prefix=/usr \
+    --mandir=/usr/share/man \
+    --infodir=/usr/share/info \
+    --build=x86_64-pc-linux-musl \
+    --enable-checking=release \
+    --disable-fixed-point \
+    --disable-libstdcxx-pch \
+    --disable-multilib \
+    --disable-nls \
+    --disable-werror \
+    --disable-symvers \
+    --enable-__cxa_atexit \
+    --enable-default-pie \
+    --enable-default-ssp \
+    --enable-cloog-backend \
+    --disable-libssp \
+    --disable-libmpx \
+    --disable-libmudflap \
+    --disable-libsanitizer \
+    --disable-bootstrap \
+    --with-system-zlib \
+    --without-included-gettext
+
+make
+
+find "$1" -name libgtkpeer.a  -exec rm -f {} +
+find "$1" -name libgjsmalsa.a -exec rm -f {} +
+find "$1" -name libgij.a      -exec rm -f {} +
+
+mkdir -p "$1/usr/include/d/"
+mkdir -p "$1/usr/bin"
+mkdir -p "$1/usr/lib"
+
+find . -name d21 -exec mv "$1/usr/bin/" {} +
+
+mv include/d/* "$1/usr/include/d/"
+
+
+
+

@@ -1,0 +1,18 @@
+#!/bin/sh -e
+
+./configure \
+    --prefix=/usr \
+    --disable-docs
+
+make
+
+./install-sh -c -d "$1/usr/bin"
+./install-sh -c -d "$1/usr/share/doc/megatools"
+./install-sh -c -d "$1/usr/share/man/man1"
+./install-sh -c -d "$1/usr/share/man/man5"
+./install-sh -c -d "$1/usr/share/man/man7"
+./install-sh -c -m 755 megacopy megadf megadl megaget megals megamkdir megaput megareg megarm "$1/usr/bin"
+./install-sh -c -m 644 docs/megadf.1 docs/megaget.1 docs/megals.1 docs/megamkdir.1 docs/megaput.1 docs/megareg.1 docs/megarm.1 \
+                        docs/megacopy.1 docs/megadl.1 "$1/usr/share/man/man1"
+./install-sh -c -m 644 docs/megarc.5 "$1/usr/share/man/man5"
+./install-sh -c -m 644 docs/megatools.7 "$1/usr/share/man/man7"

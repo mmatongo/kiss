@@ -1,0 +1,19 @@
+#!/bin/sh -e
+
+./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --bundled-libraries=NONE \
+    --builtin-libraries=replace \
+    --disable-rpath \
+    --disable-rpath-install \
+    --without-gettext
+
+make
+
+ar qf libtalloc.a bin/default/talloc.c*.o
+
+make DESTDIR="$1" install
+
+install -Dm644 libtalloc.a "$1/usr/lib/libtalloc.a"
