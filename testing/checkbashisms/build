@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+sed -i "s/###VERSION###/2.20.3/g" scripts/checkbashisms.pl
+
+install -Dm755 scripts/checkbashisms.pl "$1/usr/bin/checkbashisms"
+install -Dm755 scripts/checkbashisms.1 "$1/usr/share/man/man1/checkbashisms.1"
