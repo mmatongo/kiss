@@ -4,12 +4,12 @@ for patch in *.patch; do
     patch -p1 < "$patch"
 done
 
-sed -i -e "/^cflags=/s/"/"$CFLAGS /" \
-    -e "/^lflags=/s/"/"$LDFLAGS /" build.sh
+sed -i -e "/^cflags=/s/"/"$CFLAGS /" build.sh
+sed -i -e "/^lflags=/s/"/"$LDFLAGS /" build.sh
 
 ./build.sh
 
 install -Dm755 lite "$1/usr/bin/lite"
 install -d "$1/usr/share/lite"
 
-cp -a data/* "$1/usr/share/lite/"
+cp -r data/* "$1/usr/share/lite/"
