@@ -7,7 +7,8 @@ done
 make
 make DESTDIR="$1" install
 
-for i in $(ls *.crt | sort); do
-        cat "$i"
-        printf "\n"
-done > "$1/etc/ssl/certs/ca-certificates.crt"
+#find . -name "*.crt" -exec mv "$1/etc/ssl/certs/ca-certificates.crt";
+
+#cp -r "$1/usr/sbin/" "$1/usr/bin"
+
+#rm -rf "$1/usr/sbin"
