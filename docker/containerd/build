@@ -1,7 +1,12 @@
 #!/bin/sh -e
 
-export GOFLAGS="$GOFLAGS -trimpath -mod=readonly -modcacherw"
-tree -Ll 2 .
+export GOPATH=$PWD
+
+cd containerd
 
 make
 make DESTDIR="$1" install
+
+install -Dm755 run "$1/etc/sv/containerd/run"
+install -Dm755 run "$1/etc/sysmgr/containerd"
+ln -s /run/runit/supervise.containerd "$1/etc/sv/containerd/supervise"
