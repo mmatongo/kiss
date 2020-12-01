@@ -10,8 +10,8 @@ cmake -B build \
     -DCMAKE_BUILD_TYPE=None \
     -DSPIRV_WERROR=OFF \
     -DSPIRV_SKIP_TESTS=ON \
-    -DBUILD_SHARED_LIBS=ON \ 
-    -DSPIRV-Headers_SOURCE_DIR=/usr  
+    -DBUILD_SHARED_LIBS=ON \
+    -DSPIRV-Headers_SOURCE_DIR=/usr
 
-ninja
-ninja install
+ninja -C build
+ninja -C build install
