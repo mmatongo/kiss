@@ -1,0 +1,4 @@
+#!/bin/sh -e
+
+export AUTO_GOPATH=1
+export GITCOMMIT=
