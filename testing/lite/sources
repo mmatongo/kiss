@@ -8,14 +8,12 @@ files/colorpreview.lua
 files/console.lua
 files/detectindent.lua
 files/indentguide.lua
-files/language_go.lua
 files/language_hs.lua
 files/language_nim.lua
 files/language_rust.lua
 files/language_sh.lua
 files/linter_nim.lua
 files/linter_shellcheck.lua
-files/todotreeview.lua
 files/togglesnakecamel.lua
 files/workspace.lua
 files/linter.lua
