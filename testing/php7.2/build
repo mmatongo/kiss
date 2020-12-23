@@ -1,0 +1,30 @@
+#!/bin/sh -e
+
+export DESTDIR="$1"
+
+./configure \
+    --prefix="$1/usr" \
+    --sysconfdir="$1/etc" \
+    --localstatedir="$1/var" \
+    --datadir="$1/usr/share/php" \
+    --mandir="$1/usr/share/man" \
+    --enable-fpm \
+    --with-fpm-user=apache \
+    --with-fpm-group=apache \
+    --with-config-file-path="$1/etc" \
+    --with-zlib \
+    --enable-bcmath \
+    --with-bz2 \
+    --enable-calendar \
+    --enable-dba=shared \
+    --without-gdbm \
+    --without-gmp \
+    --enable-ftp \
+    --without-gettext \
+    --enable-mbstring \
+    --without-readline
+
+make
+make DESTDIR="$1" install
+
+install -Dm644 php.ini-production "$1/etc/php.ini"
