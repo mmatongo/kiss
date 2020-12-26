@@ -1,6 +1,8 @@
 https://github.com/rxi/lite/archive/v1.11.tar.gz
 patches/lite-path-fix.patch
 files/console.lua
+files/init.lua
+files/gofmt.lua
 files/autoinsert.lua
 files/autowrap.lua
 files/bracketmatch.lua
@@ -8,6 +10,7 @@ files/colorpreview.lua
 files/console.lua
 files/detectindent.lua
 files/indentguide.lua
+files/language_go.lua
 files/language_hs.lua
 files/language_nim.lua
 files/language_rust.lua
