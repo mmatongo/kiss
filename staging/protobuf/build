@@ -1,0 +1,14 @@
+#!/bin/sh -e
+
+./autogen.sh
+
+rm -rf third_party/*
+
+./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --mandir=/usr/share/man \
+    --localstatedir=/var
+
+make
+make DESTDIR="$1" install
