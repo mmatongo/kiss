@@ -1,7 +1,13 @@
+brotli
 cmake make
 eudev make
-gtest make
+gcc
 go make
-pcre2 make
+gtest make
+libusb
+lz4
+pcre2
 perl make
-libusb make
+protobuf
+zlib
+zstd
