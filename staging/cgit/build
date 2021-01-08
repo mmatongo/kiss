@@ -10,7 +10,7 @@ makeopts="NO_ICONV=YesPlease
 
 
 make get-git
-make $makeopts 
+make "$makeopts" 
 make CGIT_SCRIPT_PATH=/usr/share/webapps/cgit DESTDIR="$1" prefix=/usr install
 
 ln -s cgit.cgi "$1/usr/share/webapps/cgit/cgit"
