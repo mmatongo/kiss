@@ -1,0 +1,39 @@
+#!/bin/sh -e
+
+export CXXFLAGS="$CXXFLAGS -Wno-attributes"
+export WINEMAKEFLAGS="--nosource-fix --nolower-include --nodlls --nomsvcrt --dll -ldl"
+export WINEMAKEFLAGS32="$WINEMAKEFLAGS --wine32"
+export LDFLAGS="$LDFLAGS -L/usr/lib32/wine -lntdll.dll"
+
+(
+    mkdir -p build/lsteamclient.win64
+
+    cp -r lsteamclient/* build/lsteamclient.win64
+
+    cd build/lsteamclient.win64
+
+    winemaker $WINEMAKEFLAGS -DSTEAM_API_EXPORTS .
+
+    make
+)
+
+(
+    mkdir -p build/vrclient.win64
+
+    cp -r vrclient_x64/* build/vrclient.win64
+
+    cd build/vrclient.win64/vrclient_x64
+
+    winemaker -I.. $WINEMAKEFLAGS .
+
+    CXXFLAGS="$CXXFLAGS --std=c++0x" make
+
+    winebuild --dll --fake-module -E vrclient_x64.spec -o vrclient_x64.dll.fake
+)
+
+install -Dm755 "$1/usr/lib/wine"
+install -Dm755 build/lsteamclient.win64/lsteamclient.dll.so "$1/usr/lib/wine/lsteamclient.dll.so"
+install -Dm755 build/vrclient.win64/vrclient_x64/vrclient_x64.dll.so "$1/usr/lib/wine/vrclient_x64.dll.so"
+
+install -D "$1/usr/lib/wine/fakedlls"
+install -Dm644 build/vrclient.win64/vrclient_x64/vrclient_x64.dll.fake "$1/usr/lib/wine/fakedlls/vrclient_x64.dll"
