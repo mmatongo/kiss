@@ -35,7 +35,7 @@ cd build
     --prefix=/usr/ \
     --sysconfdir=/etc \
     --bindir=/usr/bin/ \
-     --localstatedir=/var \
+    --localstatedir=/var \
     --includedir=/usr/include \
     --libdir=/usr/lib \
     --mandir=/usr/share/texlive/doc/man \
