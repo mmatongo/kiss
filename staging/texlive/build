@@ -1,0 +1,61 @@
+#!/bin/sh -e
+
+export TEXARCH="$(uname -m | sed -e 's/i.86/i386/' -e 's/$/-linux/')"
+export OS="$( cat /etc/issue )"
+
+cp texk/web2c/pdftexdir/pdftoepdf-poppler0.86.0.cc texk/web2c/pdftexdir/pdftoepdf.cc
+cp texk/web2c/pdftexdir/pdftosrc-poppler0.83.0.cc texk/web2c/pdftexdir/pdftosrc.cc
+
+mkdir -p "$1/etc/profile.d"
+
+cat >> "$1/etc/profile.d/extrapaths.sh" << EOF
+
+# Begin texlive addition
+
+pathappend /usr/share/doc/man  MANPATH
+pathappend /usr/doc/texliveinfo INFOPATH
+pathappend /usr/bin/$TEXARCH
+
+# End texlive addition
+
+EOF
+
+cat >> "$1/etc/ld.so.conf" << EOF
+# Begin texlive 2020 addition
+
+/usr/lib
+
+# End texlive 2020 addition
+EOF
+
+mkdir -p build
+cd build
+
+../configure \
+    --prefix=/usr/ \
+    --sysconfdir=/etc \
+    --bindir=/usr/bin/ \
+     --localstatedir=/var \
+    --includedir=/usr/include \
+    --libdir=/usr/lib \
+    --mandir=/usr/share/texlive/doc/man \
+    --disable-native-texlive-build \
+    --disable-static --enable-shared \
+    --disable-dvisvgm  \
+    --enable-libpaper \
+    --enable-libgs \
+    --enable-graphite2 \
+    --with-system-cairo \
+    --with-system-fontconfig \
+    --with-system-freetype2 \
+    --with-system-gmp \
+    --with-system-harfbuzz \
+    --with-system-icu \
+    --with-system-libpng \
+    --with-system-mpfr \
+    --with-system-pixman \
+    --with-system-zlib  \
+    --with-banner-add="$OS Linux"
+
+make
+make install-strip
